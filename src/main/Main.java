@@ -1,8 +1,19 @@
 package main;
 
+import main.models.Customer;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        Customer buyer = new Customer("név");
+
+        Class cl = buyer.getClass();
+
+        String clClassnameWithPackages = cl.getName();
+        String clClassname = cl.getSimpleName();
+
+
 
     }
 

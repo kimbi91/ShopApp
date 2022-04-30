@@ -2,6 +2,9 @@ package main.models;
 
 import main.models.foods.*;
 
+import java.util.Locale;
+import java.util.Random;
+
 public class Shop {
 
     private Product[] products;
@@ -16,6 +19,32 @@ public class Shop {
 
     public void close() {
         isOpen = false;
+    }
+
+    public Product findProduct(String productName) {
+
+        Class classToFind = findClassByName(productName);
+
+        for (Product product : products) {
+            if (product.getClass().equals(classToFind)) {
+                return product;
+            }
+        }
+
+        return null;
+    }
+
+    private Class findClassByName(String className) {
+
+        return switch (className.toLowerCase(Locale.ROOT)) {
+            case "kenyér" -> Bread.class;
+            case "cseresznye" -> Cherry.class;
+            case "tej" -> Milk.class;
+            case "rum" -> Rum.class;
+            case "cukor" -> Sugar.class;
+            default -> null;
+        };
+
     }
 
     public void fillProducts(int productNumber) {

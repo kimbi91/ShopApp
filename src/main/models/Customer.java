@@ -1,6 +1,10 @@
 package main.models;
 
+import main.models.foods.Milk;
 import main.models.foods.Product;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Customer {
 
@@ -43,6 +47,29 @@ public class Customer {
         money -= bill;
     }
 
+
+
+    public Milk findMilk(Product[] products, double maxFatPercent) {
+
+        for (Product product : products) {
+            if (product instanceof Milk productMilk && productMilk.getFat() < maxFatPercent) {
+                return productMilk;
+            }
+        }
+
+        return null;
+    }
+
+    public void buyMilk(Product[] products, double maxFatPercent) {
+
+        Milk milk = findMilk(products, maxFatPercent);
+
+        if (milk != null) {
+            boolean buy = couldPutIntoCart(milk);
+        }
+
+    }
+
     public String getName() {
         return name;
     }
@@ -67,4 +94,18 @@ public class Customer {
         this.cart = cart;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return money == customer.money && name.equals(customer.name) && Arrays.equals(cart, customer.cart);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(name, money);
+        result = 31 * result + Arrays.hashCode(cart);
+        return result;
+    }
 }
