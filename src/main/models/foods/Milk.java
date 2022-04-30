@@ -1,13 +1,11 @@
-package main.shop;
+package main.models.foods;
 
-// TODO create Drink class
-// TODO Milk extends Drink
-public class Milk extends Product {
+public class Milk extends Drink {
 
     private double fat;
 
     public Milk() {
-        super(1.0, "liter", false, 10);
+        super(1.0, "liter", false, 50);
         this.fat = 1.5;
     }
 
@@ -16,12 +14,7 @@ public class Milk extends Product {
         this.fat = 1.5;
     }
 
-    public Milk(double quantity, String unitType, boolean isLongLife, int price) {
-        super(quantity, unitType, isLongLife, price);
-    }
-
-    public Milk(double quantity, String unitType, boolean isLongLife,
-                int price, double fat) {
+    public Milk(double quantity, String unitType, boolean isLongLife, int price, double fat) {
         super(quantity, unitType, isLongLife, price);
         this.fat = fat;
     }

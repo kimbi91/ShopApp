@@ -1,4 +1,4 @@
-package main.shop;
+package main.models.foods;
 
 public class Food extends Product {
 
