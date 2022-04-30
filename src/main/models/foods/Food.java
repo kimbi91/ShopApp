@@ -1,6 +1,9 @@
 package main.models.foods;
 
-public class Food extends Product {
+
+import main.models.Consumable;
+
+public class Food extends Product implements Consumable {
 
     public Food(double quantity, UnitType unitType, int price) {
         this.quantity = quantity;
@@ -13,5 +16,6 @@ public class Food extends Product {
         this(quantity, unitType, price);
         this.isLongLife = isLongLife;
     }
+
 
 }

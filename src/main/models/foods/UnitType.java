@@ -5,6 +5,9 @@ public enum UnitType {
     KILOGRAM,
     LITER,
     PIECE,
-    DECILITER
+    DECILITER;
+
+    UnitType() {}    // default konstruktor
+
 
 }
