@@ -1,6 +1,6 @@
 package main.models;
 
-import main.models.foods.Milk;
+import main.models.drinks.Milk;
 import main.models.foods.Product;
 
 import java.util.Arrays;

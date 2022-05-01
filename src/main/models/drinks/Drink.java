@@ -1,6 +1,8 @@
-package main.models.foods;
+package main.models.drinks;
 
 import main.models.Consumable;
+import main.models.foods.Product;
+import main.models.foods.UnitType;
 
 public class Drink extends Product implements Consumable {
 

@@ -1,4 +1,6 @@
-package main.models.foods;
+package main.models.drinks;
+
+import main.models.foods.UnitType;
 
 public class Milk extends Drink {
 
