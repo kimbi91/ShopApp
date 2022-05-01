@@ -1,5 +1,6 @@
 package main;
 
+import main.models.Consumable;
 import main.models.Customer;
 
 public class Main {

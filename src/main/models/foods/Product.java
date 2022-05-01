@@ -5,16 +5,18 @@ import javax.lang.model.type.UnionType;
 // ősosztályom!
 public class Product {
 
-    // láthatósági jelző, static kulcsszó, adattípus, név
-    public static int foodCounter;
-
-    protected double quantity = 5.0;
+    protected double quantity;
     protected UnitType unitType;
     protected boolean isLongLife;
-    protected int price = 1;
+    protected int price;
 
     public Product() {
-        foodCounter++;
+
+    }
+
+    public Product(double quantity, int price) {
+        this.quantity = quantity;
+        this.price = price;
     }
 
     public Product(double quantity, UnitType unitType, int price) {
